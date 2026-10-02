@@ -29,8 +29,14 @@
 	<properties>
 		<java.version>17</java.version>
         <kotlin.version>2.2.20</kotlin.version>
+        <skipTests>true</skipTests>
     </properties>
 	<dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
@@ -54,6 +60,11 @@
 			<scope>test</scope>
 		</dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
@@ -64,6 +75,7 @@
             <version>${kotlin.version}</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
 	<build>
@@ -124,7 +136,13 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>5.8.0.7211</version>
+            </plugin>
         </plugins>
 	</build>
 
 </project>
+

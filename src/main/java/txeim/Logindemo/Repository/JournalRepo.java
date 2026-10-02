@@ -3,8 +3,11 @@ package txeim.Logindemo.Repository;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
-import txeim.Logindemo.Entity.LoginEntity;
+import txeim.Logindemo.Entity.JournalEntity;
+
+import java.util.Optional;
 
 @Repository
-public interface LoginRepo extends MongoRepository<LoginEntity, ObjectId> {
+public interface JournalRepo extends MongoRepository<JournalEntity, ObjectId> {
+
 }
